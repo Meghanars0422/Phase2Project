@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.ecommerce">
+    <class name="com.ecommerce.ClassTable" table="class">
+        <id name="ClassID" type="long" column="ClassID">
+            <generator class="identity"/>
+        </id>
+        <property name="Classname" type="string" column="Classname"/>
+        <many-to-one name="teachers" fetch ="join" column="teacher_id" class="com.ecommerce.Teacher">
+     	</many-to-one>
+    </class>
+</hibernate-mapping>
